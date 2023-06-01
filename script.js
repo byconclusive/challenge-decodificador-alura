@@ -45,3 +45,16 @@ function desencriptar (stringDesencriptada)  {
 
     return stringDesencriptada;
 }
+
+function btnCopiar () {
+    const texto = mensagem.value;
+    navigator.clipboard
+    .writeText (texto)
+    .then(() => {
+        console.log("Texto copiado para área de transferência: ")
+    })
+    .cath((error) => {
+        console.error("Erro ao copiar o texto: ", error);
+    });
+    mensagem.value = "";
+}
